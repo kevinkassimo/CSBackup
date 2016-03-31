@@ -1,0 +1,125 @@
+1. man -k "TheWordIAmInterestedIn"
+   Discovery: I found it when I browse through the
+   manual of man and further searched related 
+   apropos and whatis commands
+2. /bin/cp
+   and
+   /usr/bin/wc
+   respectively.
+   Discovery: I noticed that the slides of Josh
+   gave us the hint of which, a command I later
+   searched its manual. I used which cp and
+   which wc to get the results. 
+3. w [ X
+   w: show who is logged on and what they are doing
+   [: not included in manual
+   X: a portable, network-transparent window system
+   Discovery: viewing the man of find I got
+   -executable and -name. I originally used
+   find / -executable -name "?". However, this
+   met with many denied access permission. I
+   noticed from previous question that usually
+   a name without a suffix is a kind of cmd.
+   They locate in /usr/bin. Therefore I instead
+   used the command
+   find /user/bin -executable -name "?"
+   and get the results.
+4. /etc/alternatives/emacs
+   Discovery: Josh's slides gave us the hint
+   of readlink. Checking the manual of readlink,
+   I used the command readlink /usr/bin/emacs 
+   and get the result.
+5. g+s means set group member ID upon execution which
+   allows temporary visiting the documents of higher
+   permission level.
+   o-x means removing the executable permission
+   for other people.
+   Discovery: learned from the Josh's slides.
+6. find -mtime -21
+   Discovery: from the manual of find I noticed
+   in the latter part it introduced the -atime,
+   -ctime and -mtime along with the definition
+   of +n, -n and n.
+7. ./Desktop
+   ./Desktop/desktp.ini
+   ./Desktop/Google Chrome.lnk
+   ./Documents/desktop.ini
+   ./Downloads
+   ./Downloads/desktio.ini
+   ./Downloads/1.1.pptx
+   ./Downloads/1.1(1).pptx
+   ./.bash_history
+   ./testDir
+   ./.lesshst
+   Discovery: follow question 6.
+8. 358
+   Discovery: Josh's slides gave the hint of wc.
+   To achieve this, use the command
+   which find
+   to get the directory of find, which is /usr/bin
+   use the command
+   find /usr/bin -type -l | wc -l
+   to print out the number of line for find.
+9. sgmlwhich
+   Discovery: after failed using find, I noticed
+   that ls allows to print all directories and
+   files in the sequence of time by using ls -tlt
+   command. The last object of its output is the
+   oldest file.
+10. from LC_* environment variables.
+    Discovery: this is mentioned in the Description
+    section of man localdef.
+11. 
+    Buffer-menu-sort
+    Buffer-menu-sort-by-column
+    ibuffer-invert-sorting
+    ibuffer-toggle-sorting-mode
+    rmail-sort-by-author
+    rmail-sort-by-correspondent
+    rmail-sort-by-date
+    rmail-sort-by-labels
+    rmail-sort-by-lines
+    rmail-sort-by-recipient
+    rmail-sort-by-subject
+    sort-columns
+    sort-fields
+    sort-lines
+    sort-numeric-fields
+    sort-pages
+    sort-paragraphs
+    sort-regexp-fields
+    Discovery: Found this command from the GNU
+    Emacs Reference card: C-h f and type "sort"
+12. C-M-a: beginning-of-defun
+    C-M-b: backward-sexp
+    C-M-c: exit-recursive-edit
+    C-M-d: down-list
+    C-M-e: end-of-defun
+    C-M-f: forward-sexp
+    C-M-h: mark-defun
+    Discovery: Use command C-h b to open the list
+    of all keys. Use C-s to search for keys with
+    the starting of "C-M" and view the descriptions.
+13. C-g runs the command keyboard-quit, a Lisp function.
+    It signals "quit" and leave the waiting-for-input
+    condition aborted.
+    Discorvery: Use command C-h k, then type in the
+    command of C-g, which shows the detailed description.
+    I have made simple revision of the official explanation.
+14. yank reinsert or paste the most recently killed text
+    to the place of cursor.
+    Discorvery: similar to Q13, type C-h k and C-y to find
+    the description.
+15. dired command described at the beginning with the info
+    of available space: "total used in directory 395152 
+    available 10174588". However, ls -l only showed "total
+    395056". Furthermore, dired allows us to access these
+    files by moving the cursor and type Enter to edit in emacs.
+    On the other hand, there is a space before 
+    every entry. Also, dired listed some entry that are
+    hidden when printed by the command ls -l. Meanwhile,
+    some entries that has special color in ls -l is changed
+    back to default in the dired command.
+    Discovery: Use C-h-f to find the key for dired, which is
+    C-x-d. Compare the results of Emacs' C-x-d with terminal's
+    ls -l command results.
